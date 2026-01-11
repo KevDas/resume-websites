@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Kevin Dasrath — Resume / Portfolio" />
+  <title>Kevin Dasrath</title>
+
+  <link rel="preload" href="./styles.css" as="style" />
+  <link rel="stylesheet" href="./styles.css" />
+
+  <!-- Favicons (optional) -->
+  <link rel="icon" href="./assets/avatar.svg" type="image/svg+xml" />
+</head>
+
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-grid">
+      <div class="identity">
+        <img class="avatar" src="./assets/avatar.svg" alt="Avatar" width="56" height="56" loading="lazy" />
+        <div class="id-text">
+          <h1 class="name">Kevin Dasrath</h1>
+          <p class="tagline">Product-focused Developer</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <nav class="nav" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#links">Links</a>
+        </nav>
+
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
+          <span class="theme-dot" aria-hidden="true"></span>
+          <span class="theme-label" id="themeLabel">Auto</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="content" class="wrap">
+    <section class="hero">
+      <div class="hero-links">
+        <a class="pill" href="mailto:kevdasrath@gmail.com">kevdasrath@gmail.com</a>
+        <a class="pill" href="https://github.com/KevDas" target="_blank" rel="noreferrer">github.com/KevDas</a>
+        <a class="pill" href="https://www.linkedin.com/in/kevindasrath" target="_blank" rel="noreferrer">linkedin.com/in/kevindasrath</a>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2>About</h2>
+      <p class="lede">
+        I build clean, reliable systems and modern web experiences. I like shipping, measuring results, and iterating fast.
+        Currently interested in cloud engineering, networking, and security-minded architecture.
+      </p>
+
+      <div class="callouts">
+        <div class="callout">
+          <h3>Focus</h3>
+          <p>Cloud • Networking • Full-stack • Security</p>
+        </div>
+        <div class="callout">
+          <h3>Stack</h3>
+          <p>AWS • Linux • Node • React • SQL</p>
+        </div>
+        <div class="callout">
+          <h3>Location</h3>
+          <p>Orlando, FL (open to remote)</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <h2>Experience</h2>
+
+      <ol class="timeline" aria-label="Experience Timeline">
+        
+        <li class="timeline-item">
+          <div class="time">December 2025 — Present
+          </div>
+          <div class="card">
+            <div class="card-top">
+              <h3 class="role">Premium Support Engineer — Kaseya</h3>
+              <div class="meta">Linux • Networking • Troubleshooting</div>
+            </div>
+            <ul class="bullets">
+              <li>Troubleshot backup/restore workflows across Windows and Linux endpoints; diagnosed SMB/iSCSI and connectivity issues.</li>
+              <li>Used ping, traceroute, and packet-level thinking to isolate routing/DNS/firewall causes across segmented networks.</li>
+              <li>Improved support playbooks with scripts and checklists; reduced time-to-resolution for repeat incidents.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">Linux</span>
+              <span class="chip">Bash</span>
+              <span class="chip">SMB</span>
+              <span class="chip">iSCSI</span>
+            </div>
+          </div>
+        </li>
+
+        
+        
+        <li class="timeline-item">
+          <div class="time">June 2025 — December 2025
+          </div>
+          <div class="card">
+            <div class="card-top">
+              <h3 class="role">Support Engineer — Kaseya</h3>
+              <div class="meta">Linux • Networking • Troubleshooting</div>
+            </div>
+            <ul class="bullets">
+              <li>Troubleshot backup/restore workflows across Windows and Linux endpoints; diagnosed SMB/iSCSI and connectivity issues.</li>
+              <li>Used ping, traceroute, and packet-level thinking to isolate routing/DNS/firewall causes across segmented networks.</li>
+              <li>Improved support playbooks with scripts and checklists; reduced time-to-resolution for repeat incidents.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">Linux</span>
+              <span class="chip">Bash</span>
+              <span class="chip">SMB</span>
+              <span class="chip">iSCSI</span>
+            </div>
+          </div>
+        </li>
+
+          <li class="timeline-item">
+          <div class="time">January 2023 — Present
+          </div>
+          <div class="card">
+            <div class="card-top">
+              <h3 class="role">Bachelors of Science in Computer Science @ UCF</h3>
+              <div class="meta">GPA: 3.72, Expected Graduation: May 2027</div>
+            </div>
+            <ul class="bullets">
+              <li>Troubleshot backup/restore workflows across Windows and Linux endpoints; diagnosed SMB/iSCSI and connectivity issues.</li>
+              <li>Used ping, traceroute, and packet-level thinking to isolate routing/DNS/firewall causes across segmented networks.</li>
+              <li>Improved support playbooks with scripts and checklists; reduced time-to-resolution for repeat incidents.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">Linux</span>
+              <span class="chip">Bash</span>
+              <span class="chip">SMB</span>
+              <span class="chip">iSCSI</span>
+            </div>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Side Projects</h2>
+
+      <div class="grid">
+        <article class="project">
+          <div class="project-media">
+            <img src="./assets/project-placeholder.svg" alt="" loading="lazy" />
+          </div>
+          <div class="project-body">
+            <h3>Resume Website on AWS</h3>
+            <p>Static site with HTTPS, contact form, and structured logging for analytics and security review.</p>
+            <div class="chips">
+              <span class="chip">S3</span>
+              <span class="chip">CloudFront</span>
+              <span class="chip">ACM</span>
+              <span class="chip">Route 53</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noreferrer">Live</a>
+              <span class="dot">•</span>
+              <a href="#" target="_blank" rel="noreferrer">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-body">
+            <h3>Real-time Chat App</h3>
+            <p>Socket.io chat with Node/Express + MySQL; login flow and multi-user messaging.</p>
+            <div class="chips">
+              <span class="chip">Node</span>
+              <span class="chip">Express</span>
+              <span class="chip">Socket.io</span>
+              <span class="chip">MySQL</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noreferrer">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-body">
+            <h3>Cloud Network Lab</h3>
+            <p>Segmented VPC design with private/public subnets, routing, and security controls for realistic traffic flows.</p>
+            <div class="chips">
+              <span class="chip">VPC</span>
+              <span class="chip">Subnets</span>
+              <span class="chip">NACLs</span>
+              <span class="chip">Security Groups</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noreferrer">Notes</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="links" class="section">
+      <h2>Links</h2>
+
+      <div class="link-list">
+        <a class="row" href="https://github.com/KevDas" target="_blank" rel="noreferrer">
+          <span>GitHub</span><span class="arrow">↗</span>
+        </a>
+        <a class="row" href="https://www.linkedin.com/in/kevindasrath" target="_blank" rel="noreferrer">
+          <span>LinkedIn</span><span class="arrow">↗</span>
+        </a>
+        <a class="row" href="./resume.pdf">
+          <span>Resume PDF</span><span class="arrow">↗</span>
+        </a>
+        <a class="row" href="mailto:kevdasrath@gmail.com">
+          <span>Email</span><span class="arrow">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>
+        <span id="year"></span> • Built with HTML/CSS/JS •
+        <button class="linklike" id="copyEmail" type="button" data-email="kevdasrath@gmail.com">Copy email</button>
+      </p>
+    </footer>
+  </main>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
