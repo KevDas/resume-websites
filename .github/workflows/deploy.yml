@@ -3,6 +3,7 @@ name: Deploy to S3
 on:
   push:
     branches: ["main"]
+  workflow_dispatch: {}
 
 permissions:
   id-token: write
@@ -12,15 +13,31 @@ jobs:
   deploy:
     environment: production
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      # DEBUG: confirm GitHub context and that your environment vars are actually loading
+      - name: Debug GitHub context + vars
+        run: |
+          echo "GITHUB_REPOSITORY=$GITHUB_REPOSITORY"
+          echo "GITHUB_REF=$GITHUB_REF"
+          echo "Expected sub=repo:$GITHUB_REPOSITORY:ref:$GITHUB_REF"
+          echo "AWS_ROLE_ARN=${{ vars.AWS_ROLE_ARN }}"
+          echo "AWS_REGION=${{ vars.AWS_REGION }}"
+          echo "S3_BUCKET=${{ vars.S3_BUCKET }}"
+          echo "CLOUDFRONT_DISTRIBUTION_ID=${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}"
 
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ vars.AWS_ROLE_ARN }}
           aws-region: ${{ vars.AWS_REGION }}
+
+      # DEBUG: confirms OIDC assume-role actually succeeded
+      - name: Verify identity
+        run: aws sts get-caller-identity
 
       - name: Sync site to S3
         run: |
@@ -30,8 +47,9 @@ jobs:
             --exclude ".github/*"
 
       - name: Invalidate CloudFront (optional)
-        if: ${{ vars.CLOUDFRONT_DISTRIBUTION_ID != '' }}
+            if: ${{ vars.CLOUDFRONT_DISTRIBUTION_ID != '' }}
         run: |
           aws cloudfront create-invalidation \
             --distribution-id "${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}" \
             --paths "/*"
+
