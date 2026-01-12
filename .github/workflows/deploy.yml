@@ -3,7 +3,7 @@ name: Deploy to S3
 on:
   push:
     branches: ["main"]
-  workflow_dispatch: {}
+  workflow_dispatch:
 
 permissions:
   id-token: write
@@ -18,7 +18,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # DEBUG: confirm GitHub context and that your environment vars are actually loading
       - name: Debug GitHub context + vars
         run: |
           echo "GITHUB_REPOSITORY=$GITHUB_REPOSITORY"
@@ -35,7 +34,6 @@ jobs:
           role-to-assume: ${{ vars.AWS_ROLE_ARN }}
           aws-region: ${{ vars.AWS_REGION }}
 
-      # DEBUG: confirms OIDC assume-role actually succeeded
       - name: Verify identity
         run: aws sts get-caller-identity
 
@@ -47,7 +45,8 @@ jobs:
             --exclude ".github/*"
 
       - name: Invalidate CloudFront (optional)
-            if: ${{ vars.CLOUDFRONT_DISTRIBUTION_ID != '' }}
+        # This checks "is the variable set to a non-empty string"
+        if: ${{ vars.CLOUDFRONT_DISTRIBUTION_ID && vars.CLOUDFRONT_DISTRIBUTION_ID != 'null' }}
         run: |
           aws cloudfront create-invalidation \
             --distribution-id "${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}" \
